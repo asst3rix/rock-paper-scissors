@@ -35,33 +35,57 @@
             return computerChoice;
         }
 
-        console.log(getComputerChoice());
-
         //// function getHumanChoice()
 
         // Create variable humanChoice
         // Ask human to enter its choice and affect it to humanChoice
-        // Return humanChoice
-
-        // If getHumanChoice different from Rock, Paper or Scissors, ask human again
-        // If choice = Rock, affect it to humanChoice
-        // Else if choice = Paper, affect it to humanChoice
-        // Else if choice = Scissors, affect it to humanChoice
-        // Else, show "Please choose between Rock, Paper or Scissors"
+        // While humanChoice different from Rock, Paper or Scissors, ask human again
+        // Correct the case sensitive of humanChoice and return it
         function getHumanChoice()
         {
             let humanChoice = prompt("Please choose between Rock, Paper or Scissors.");
-            return humanChoice;
+
+            while(humanChoice.toLowerCase() !== "rock" && humanChoice.toLowerCase() !== "paper" && humanChoice.toLowerCase() != "scissors")
+            {
+                humanChoice = getHumanChoice();
+            }
+
+            return humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();
         }
 
-        let choice = getHumanChoice();
-        while(choice !== "Rock" && choice !== "Paper" && choice != "Scissors")
+        let humanScore = 0;
+        let computerScore = 0;
+
+        // function playRound()
+
+        function playRound(humanChoice, computerChoice)
         {
-            choice = getHumanChoice();
+            if (humanChoice === computerChoice)
+            {
+                console.log("Human choice : " + humanChoice);
+                console.log("Computer choice : " + computerChoice);
+                console.log("It's a draw!");
+            }
+            else if (humanChoice === "Rock" && computerChoice === "Paper"
+                  || humanChoice === "Paper" && computerChoice === "Scissors"
+                  || humanChoice === "Scissors" && computerChoice === "Rock")
+            {
+                console.log("Human choice : " + humanChoice);
+                console.log("Computer choice : " + computerChoice);
+                console.log("Computer win!");
+                computerScore++;
+            }
+            else
+            {
+                console.log("Human choice : " + humanChoice);
+                console.log("Computer choice : " + computerChoice);
+                console.log("Human win!");
+                humanScore++;
+            }
         }
 
-        console.log(choice);
-        
+        playRound(getHumanChoice(), getComputerChoice());
+
     </script>
 
 </body>
