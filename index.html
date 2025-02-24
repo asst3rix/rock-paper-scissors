@@ -5,7 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 </head>
-<body>
-    
+<body style="background-color: black;">
+
+    <script>
+        ////function getComputerChoice
+
+        //Generate a number betwen 0 and 2
+        //if number = 0, return Rock
+        //else if number = 1, return Paper,
+        //else return Scissors
+        function getComputerChoice() 
+        {
+            let computerChoice = Math.floor(Math.random() * 3);
+
+            if (computerChoice === 0) 
+            {
+                computerChoice = "Rock";
+            } 
+            else if (computerChoice === 1) 
+            {
+                computerChoice = "Paper";
+            } 
+            else 
+            {
+                computerChoice = "Scissors";
+            }
+
+            return computerChoice;
+        }
+
+        console.log(getComputerChoice());
+        
+    </script>
+
 </body>
 </html>
