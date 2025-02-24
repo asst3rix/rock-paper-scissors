@@ -72,19 +72,46 @@
             {
                 console.log("Human choice : " + humanChoice);
                 console.log("Computer choice : " + computerChoice);
-                console.log("Computer win!");
+                console.log("Computer wins!");
                 computerScore++;
             }
             else
             {
                 console.log("Human choice : " + humanChoice);
                 console.log("Computer choice : " + computerChoice);
-                console.log("Human win!");
+                console.log("Human wins!");
                 humanScore++;
             }
         }
 
-        playRound(getHumanChoice(), getComputerChoice());
+        
+
+        //// function playGame()
+
+        function playGame()
+        {
+            for (let index = 1; index < 6; index++)
+            {
+                console.log("Round " + index + " :")
+                playRound(getHumanChoice(), getComputerChoice());
+                console.log("Human : " + humanScore + " vs Computer : " + computerScore);
+            }
+
+            if (humanScore > computerScore)
+            {
+                console.log("Human wins the game!");
+            }
+            else if (humanScore < computerScore)
+            {
+                console.log("Computer wins the game!");
+            }
+            else
+            {
+                console.log("We have a draw guys!");
+            }
+        }
+
+        playGame();
 
     </script>
 
