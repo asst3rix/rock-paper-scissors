@@ -8,12 +8,13 @@
 <body style="background-color: black;">
 
     <script>
-        ////function getComputerChoice
+        //// function getComputerChoice()
 
-        //Generate a number betwen 0 and 2
-        //if number = 0, return Rock
-        //else if number = 1, return Paper,
-        //else return Scissors
+        // Create variable computerChoice and give it a number betwen 0 and 2
+        // If computerChoice = 0, affect Rock to computerChoice
+        // Else if computerChoice = 1, affect Paper to computerChoice,
+        // Else affect Scissors to cumputerChoice
+        // return computerChoice
         function getComputerChoice() 
         {
             let computerChoice = Math.floor(Math.random() * 3);
@@ -35,6 +36,31 @@
         }
 
         console.log(getComputerChoice());
+
+        //// function getHumanChoice()
+
+        // Create variable humanChoice
+        // Ask human to enter its choice and affect it to humanChoice
+        // Return humanChoice
+
+        // If getHumanChoice different from Rock, Paper or Scissors, ask human again
+        // If choice = Rock, affect it to humanChoice
+        // Else if choice = Paper, affect it to humanChoice
+        // Else if choice = Scissors, affect it to humanChoice
+        // Else, show "Please choose between Rock, Paper or Scissors"
+        function getHumanChoice()
+        {
+            let humanChoice = prompt("Please choose between Rock, Paper or Scissors.");
+            return humanChoice;
+        }
+
+        let choice = getHumanChoice();
+        while(choice !== "Rock" && choice !== "Paper" && choice != "Scissors")
+        {
+            choice = getHumanChoice();
+        }
+
+        console.log(choice);
         
     </script>
 
